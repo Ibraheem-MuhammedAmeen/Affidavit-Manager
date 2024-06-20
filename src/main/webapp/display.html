@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <section class="row">
+        <div class="col-md-12">
+
+            <div class="header-color p-4">
+                <div class="row">
+                    <div class="col-md-3">
+
+                    </div>
+                    <div class="col-md-6 text-center text-white">
+                        <h5>HIGHT COURT OF JUSTICE</h5>
+                        <p>FEDERAL CAPITAL TERRITORY, ABUJA</p>
+                    </div>
+                    <div class="col-md-3">
+							 <button class="btn btn-success" onclick="goBack()">Go Back to Previous Page</button>
+                    </div>
+                </div>
+            </div>
+            <div class="after-Header p-2"></div>
+    </section>
+    <!-- <div id="imageOutput" class=""></div>
+    <div id="output" class="my-5 container"> -->
+    <section class="text-center">
+        <div class="row">
+            <div class="col-md-9">
+                <h5 class="my-5">AFFIDAVIT OF TENDER</h5>
+            </div>
+            <div class="col-md-3">
+                <div id="imageOutput" class="my-5 mx-5 imgs"></div>
+                <div class="box my-2" style="float: right; margin-right: 5rem;">
+                    <div class="text-center">
+                        <p>High court of justice</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container custom-container">
+        <div class="row">
+            <div class="col-md-1">
+
+            </div>
+            <div class="col-md-10">
+                <div id="output"></div>
+            </div>
+            <div class="col-md-1">
+
+            </div>
+        </div>
+    </section>
+    <section class="container custom-container">
+        <div class="row">
+            <div class="col-md-8">
+                <p><span id="spanOutput"></span><span id="currentDate"></span> </p>
+            </div>
+            <div class="col-md-4">
+                <p style="text-decoration: dotted overline;">DEPONENT</p>
+            </div>
+        </div>
+    </section>
+    <section class="custom-container">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="qrcode"></div>
+            </div>
+            <div class="col-md-6 align-self-center">
+                <div class="box" style="font-size: small;">
+                    High Court of the FCT Abuja <br>
+                    COMMISSIONER FOR OATH <br>
+                    HAZIRU ADAMU
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="custom-container">
+        <p>Kindly scan QR code or visit https://arms.fcthighcourt.gov.ng/ to verify AFFIDAVIT</p>
+        <p class="text-center text-danger">Please note this affidavit cost 1,500 only</p>
+    </section>
+    <!-- Image and form data will be displayed here -->
+
+    <script>
+        // Retrieve form data and image from local storage
+        const sentence1 = localStorage.getItem('sentence1');
+        const sentence2 = localStorage.getItem('sentence2');
+        const sentence3 = localStorage.getItem('sentence3');
+        const sentence4 = localStorage.getItem('sentence4');
+        const sentence5 = localStorage.getItem('sentence5');
+        const sentence6 = localStorage.getItem('sentence6');
+        const sentence7 = localStorage.getItem('sentence7');
+        const sentence8 = localStorage.getItem('sentence8');
+        const sentence9 = localStorage.getItem('sentence9');
+        const sentence10 = localStorage.getItem('sentence10');
+        const uploadedImage = localStorage.getItem('image');
+
+        if (uploadedImage) {
+            const image = new Image();
+            image.src = uploadedImage;
+            image.alt = 'Uploaded Image';
+            image.style.maxWidth = '150px';
+            image.style.float = 'right';
+
+            const paragraph = document.createElement('p');
+            paragraph.innerHTML = `
+            I ${sentence1}
+            Of ${sentence2} do hereby declare an oath and state as follows:<br><br>
+            That ${sentence3} and have the mandate of the Company to send this tender<br><br>
+            That ${sentence4}<br><br>
+            That ${sentence5}<br><br>
+            That ${sentence6}<br><br>
+            That ${sentence7}<br><br>
+            That ${sentence8}<br><br>
+            That ${sentence9}<br><br>
+          `;
+            const paragraph1 = document.createElement('p');
+            paragraph1.innerHTML = `
+          Sworn to the ${sentence10} Registry, <br>Federal Capital Territory on`;
+
+            const outputDiv = document.getElementById('output');
+            const outputDiv1 = document.getElementById('spanOutput');
+            const imageOutputDiv = document.getElementById('imageOutput');
+            // outputDiv.appendChild(image);
+            imageOutputDiv.appendChild(image);
+            outputDiv.appendChild(paragraph);
+            outputDiv.appendChild(paragraph1);
+
+            // Clear local storage after displaying the data
+            localStorage.removeItem('sentence1');
+            localStorage.removeItem('sentence2');
+            localStorage.removeItem('sentence3');
+            localStorage.removeItem('sentence4');
+            localStorage.removeItem('sentence5');
+            localStorage.removeItem('sentence6');
+            localStorage.removeItem('sentence7');
+            localStorage.removeItem('sentence8');
+            localStorage.removeItem('sentence9');
+            localStorage.removeItem('sentence10');
+            localStorage.removeItem('image');
+        }
+    </script>
+     <script>
+    function goBack() {
+      // Redirect to the previous page
+      window.history.back();
+    }
+  </script>
+</body>
+
+</html>

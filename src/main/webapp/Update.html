@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Update User</title>
+   <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="css/bootstrap.css">
+   <link rel="stylesheet" href="css/style.css">
+
+    <script>
+        function validateForm(event) {
+            var password = document.getElementById("password").value;
+            var repeatPassword = document.getElementById("reppass").value;
+            
+            if (password !== repeatPassword) {
+                alert("Passwords do not match");
+                event.preventDefault(); // Prevent form submission
+            }
+        }
+    </script>
+    
+    
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            background-color: #004080;
+        }
+    </style>
+    
+    
+</head>
+<body>
+	<div>
+		
+        
+       
+    </div>
+     <section class="row">
+        <div class="col-md-12">
+
+            <div class="header-color p-4">
+                <div class="row">
+                    <div class="col-md-3">
+
+                    </div>
+                    <div class="col-md-6 text-center text-white">
+                        <h5>HIGHT COURT OF JUSTICE</h5>
+                        <p>FEDERAL CAPITAL TERRITORY, ABUJA</p>
+                    </div>
+                    <div class="col-md-3">
+        				
+        			
+                    </div>
+                </div>
+            </div>
+            <div class="after-Header p-2"></div>
+    </section>
+
+  <form method="post" action="UpdateUsers" onsubmit="validateForm(event)">
+        <div class="form-group">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <div class="form-group">
+            <label for="reppass">Repeat Password:</label>
+            <input type="password" id="reppass" name="reppass" placeholder="Repeat your password" required>
+        </div>
+        <button type="submit">Update</button>
+    </form>
+  
+
+
+
+
+
+   
+</body>
+</html>

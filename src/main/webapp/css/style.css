@@ -1,0 +1,33 @@
+::placeholder{
+    font-size: medium;
+}
+
+.header-color {
+  background: linear-gradient(to right, rgb(9, 45, 9), rgb(37, 156, 37));
+  width: 100%;
+  height: auto;
+}
+
+.after-Header {
+  background-color: orangered;
+}
+
+@media (max-width: 768px) {
+    .imgs{
+        margin-bottom: 1rem !important;
+        margin-top: 1rem !important;
+    }
+}
+
+.box {
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid rgb(130, 130, 130);
+    border-radius: 5px;
+    padding: 8px;
+  }
+  .custom-container{
+    width: 70%;
+    margin: auto;
+    text-align: justify;
+  }

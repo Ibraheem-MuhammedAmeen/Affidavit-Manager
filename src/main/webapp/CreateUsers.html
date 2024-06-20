@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+   <link rel="stylesheet" href="css/bootstrap.css">
+   <link rel="stylesheet" href="css/style.css">
+  
+    <script>
+        function validateForm(event) {
+            var password = document.getElementById("password").value;
+            var repeatPassword = document.getElementById("reppass").value;
+            
+            if (password !== repeatPassword) {
+                alert("Passwords do not match");
+                event.preventDefault(); // Prevent form submission
+            }
+        }
+    </script>
+    
+    
+</head>
+<body>
+
+	 <section class="row">
+        <div class="col-md-12">
+
+            <div class="header-color p-4">
+                <div class="row">
+                    <div class="col-md-3">
+
+                    </div>
+                    <div class="col-md-6 text-center text-white">
+                        <h5>HIGHT COURT OF JUSTICE</h5>
+                        <p>FEDERAL CAPITAL TERRITORY, ABUJA</p>
+                    </div>
+                    <div class="col-md-3">
+						<button class="btn btn-success">
+            					<a href="index.jsp" class="text-white  text-decoration-none">LogOut</a>
+        				</button>
+        				
+        				<button class="btn btn-success">
+            					<a href="UserLofgin.jsp" class="text-white  text-decoration-none">Login As User</a>
+        				</button>
+        			
+        				<button class="btn btn-success">
+            					<a href="Formtable.jsp" class="text-white  text-decoration-none">view And Delete</a>
+        				</button>
+                    </div>
+                </div>
+            </div>
+            <div class="after-Header p-2"></div>
+    </section>
+
+	
+  <div class="container">
+    <h2>Createuser</h2>
+    <form method="post" action="SupremeCreateUser" onsubmit="validateForm(event)">
+      <div class="form-group">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+      </div>
+      <div class="form-group">
+        <label for="reppass">Repeat Password:</label>
+        <input type="password" id="reppass" name="Repeat" placeholder="Repeat">
+      </div>
+      <button style="background-color: blue;" type="submit" onclick="rep()" value="Submit">Create</button>
+    </form>
+        <script>
+        
+
+        function redirectToIndex() {
+            // Redirect to index.jsp
+            window.location.href = "index.jsp";
+        }
+    </script>
+  </div>
+</body>
+</html>
